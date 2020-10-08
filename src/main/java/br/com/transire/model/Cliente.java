@@ -21,7 +21,7 @@ public class Cliente extends AbstractEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_produto")
+	@Column(name = "id_cliente")
 	private Integer id;
 
 	@Column(length = 60, nullable = false)

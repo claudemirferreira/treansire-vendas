@@ -1,5 +1,7 @@
 package br.com.transire.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +35,11 @@ public class ClienteServiceImpl extends AbstractService<Cliente, Integer> implem
 		System.out.println(dto.toString());
 		Pageable pageable = PageRequest.of(dto.getPage(), dto.getSize(), Sort.by("nome"));
 		return repository.pesquisa(dto.getNome() + "%", dto.getId(), pageable);
+	}
+
+	@Override
+	public List<Cliente> listaClientes() {
+		return repository.listaClientes();
 	}
 
 }
